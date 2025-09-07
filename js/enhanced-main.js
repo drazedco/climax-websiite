@@ -30,7 +30,10 @@ class EnhancedClimaxHosiery {
   createDarkModeToggle() {
     const toggle = document.createElement('button');
     toggle.className = 'dark-mode-toggle';
-    toggle.innerHTML = '<span class="toggle-icon">☾</span>';
+    toggle.innerHTML = `
+      <span class="toggle-icon sun-icon">☀</span>
+      <span class="toggle-icon moon-icon">☾</span>
+    `;
     toggle.setAttribute('aria-label', 'Toggle dark mode');
     toggle.title = 'Toggle dark mode';
     document.body.appendChild(toggle);
@@ -80,14 +83,20 @@ class EnhancedClimaxHosiery {
 
   enableDarkMode() {
     document.documentElement.setAttribute('data-theme', 'dark');
-    this.darkModeToggle.innerHTML = '<span class="toggle-icon">🌞</span>';
+    this.darkModeToggle.innerHTML = `
+      <span class="toggle-icon sun-icon">☀</span>
+      <span class="toggle-icon moon-icon">☾</span>
+    `;
     this.darkModeToggle.title = 'Switch to light mode';
     localStorage.setItem('theme', 'dark');
   }
 
   disableDarkMode() {
     document.documentElement.setAttribute('data-theme', 'light');
-    this.darkModeToggle.innerHTML = '<span class="toggle-icon">☾</span>';
+    this.darkModeToggle.innerHTML = `
+      <span class="toggle-icon sun-icon">☀</span>
+      <span class="toggle-icon moon-icon">☾</span>
+    `;
     this.darkModeToggle.title = 'Switch to dark mode';
     localStorage.setItem('theme', 'light');
   }
